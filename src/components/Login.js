@@ -8,18 +8,17 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/UserSlice";
+import { PHOTO_URL } from "../utils/constants";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [isSignIn, setIsSignIn] = useState(true);
   const [errMessage, setErrMessage] = useState(null);
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
+  const dispatch = useDispatch();
 
   const handleValidation = () => {
     const message = validateCredentials(
@@ -42,12 +41,11 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://example.com/jane-q-user/profile.jpg",
+            photoURL: PHOTO_URL,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(addUser({ uid, email, displayName, photoURL }));
-              navigate("/browse");
             })
             .catch((error) => {
               setErrMessage(error.message);
@@ -70,7 +68,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
