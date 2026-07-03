@@ -8,8 +8,7 @@ export const MOVIE_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjOGY5N2MxNDFiN2NkMTk1MzJlNGE4OGY5MmYwODk4MiIsIm5iZiI6MTc4MjkyNjIyMS4yNTIsInN1YiI6IjZhNDU0YjhkYTNjNWNiZTBiYzRjNDg4NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TlBA7xzHgXGVpyLoX638WY3Q8sS7nP9ZXGeZlZmA4SY",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -17,3 +16,12 @@ export const MOVIE_URL =
   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
 
 export const POSTER_URL = "https://image.tmdb.org/t/p/w500/";
+
+export const BG_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/81b52f88-dc76-488d-a939-0cf13a260a6e/web/IN-en-20260622-TRIFECTA-perspective_d39d60ef-cb5a-4793-9546-0a8d9a87948e_large.jpg";
+
+export const LANGUAGES = [
+  { indetifier: "en", name: "English" },
+  { indetifier: "hindi", name: "Hindi" },
+  { indetifier: "spanish", name: "Spanish" },
+];

@@ -10,7 +10,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/UserSlice";
-import { PHOTO_URL } from "../utils/constants";
+import { BG_URL, PHOTO_URL } from "../utils/constants";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -84,10 +84,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute bg-gradient-to-b from-white">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/81b52f88-dc76-488d-a939-0cf13a260a6e/web/IN-en-20260622-TRIFECTA-perspective_d39d60ef-cb5a-4793-9546-0a8d9a87948e_large.jpg"
-          alt="logo"
-        />
+        <img src={BG_URL} alt="logo" />
       </div>
       <form
         onSubmit={(e) => {
