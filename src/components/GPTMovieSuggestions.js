@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { POSTER_URL } from "../utils/constants";
 import MovieSuggestionsComponent from "./MovieSuggestionsComponent";
 
 const GPTMovieSuggestions = () => {
