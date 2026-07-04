@@ -20,3 +20,5 @@
 - NetflixGPT -
   - Search Bar
   - Movie suggestions
+
+Memoization

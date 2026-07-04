@@ -83,51 +83,56 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute bg-gradient-to-b from-white">
-        <img src={BG_URL} alt="logo" />
+      <div className="fixed inset-0 -z-10">
+        <img className="h-full w-full object-cover" src={BG_URL} alt="logo" />
       </div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-        className="absolute bg-black my-36 w-3/12 mx-auto right-0 left-0 p-12 text-white bg-opacity-80 rounded-lg"
-      >
-        <h1 className="text-3xl font-semibold my-4">
-          {isSignIn ? "Sign In" : "Sign Up"}
-        </h1>
-        {!isSignIn && (
-          <input
-            ref={name}
-            className="my-5 w-full p-2 bg-gray-900"
-            type="name"
-            placeholder="Name"
-          />
-        )}
-        <input
-          ref={email}
-          className="my-5 w-full p-2 bg-gray-900"
-          type="email"
-          placeholder="Email or Username"
-        />
-        <input
-          ref={password}
-          className="my-5 w-full p-2 bg-gray-900"
-          type="password"
-          placeholder="Password"
-        />
-        <p className="my-1 text-red-500">{errMessage}</p>
-        <button
-          className="my-5 p-2 w-full bg-red-600 rounded-md"
-          onClick={handleValidation}
+      <div className="absolute inset-0 bg-black/40">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+          className="absolute left-1/2 top-1/2 w-11/12 max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg bg-black/80 p-6 md:p-12 text-white"
         >
-          {isSignIn ? "Sign In" : "Sign Up"}
-        </button>
-        <p className="py-2 cursor-pointer" onClick={handleSignUp}>
-          {isSignIn
-            ? "New to Netflix? Sign up now"
-            : "Already registered? Sign in now"}
-        </p>
-      </form>
+          <h1 className="text-2xl md:text-3xl font-semibold mb-6">
+            {isSignIn ? "Sign In" : "Sign Up"}
+          </h1>
+          {!isSignIn && (
+            <input
+              ref={name}
+              className="my-4 w-full rounded-md p-3 bg-gray-900"
+              type="name"
+              placeholder="Name"
+            />
+          )}
+          <input
+            ref={email}
+            className="my-5 w-full p-2 bg-gray-900"
+            type="email"
+            placeholder="Email or Username"
+          />
+          <input
+            ref={password}
+            className="my-5 w-full p-2 bg-gray-900"
+            type="password"
+            placeholder="Password"
+          />
+          <p className="my-1 text-red-500">{errMessage}</p>
+          <button
+            className="mt-6 w-full rounded-md bg-red-600 p-3 font-semibold hover:bg-red-700"
+            onClick={handleValidation}
+          >
+            {isSignIn ? "Sign In" : "Sign Up"}
+          </button>
+          <p
+            className="mt-4 curdor-pointer text-sm md:text-base"
+            onClick={handleSignUp}
+          >
+            {isSignIn
+              ? "New to Netflix? Sign up now"
+              : "Already registered? Sign in now"}
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

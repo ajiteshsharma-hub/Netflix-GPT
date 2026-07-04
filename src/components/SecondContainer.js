@@ -6,7 +6,7 @@ const SecondContainer = () => {
 
   return (
     <div className="bg-black">
-      <div className="-mt-40 z-30 relative">
+      <div className=" md:-mt-40 z-30 relative">
         <MovieCard title={"Now Playing"} movies={movies.nowPlayingMovies} />
         <MovieCard title={"Popular"} movies={movies.popularMovies} />
         <MovieCard title={"Upcoming"} movies={movies.upcomingMovies} />
