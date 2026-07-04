@@ -7,7 +7,7 @@ const VideoTitle = () => {
   const firstMovie = movies[0];
 
   return (
-    <div className="w-full h-full  absolute bg-gradient-to-r from-black text-white pt-28 pl-5 md:pt-[17%] md:px-10">
+    <div className="w-full h-full  absolute bg-gradient-to-r from-black text-white pt-24 pl-5 md:pt-[17%] md:px-10">
       <div className="w-full md:w-1/3">
         <h1 className="text-3xl md:text-6xl font-bold py-4">
           {firstMovie.original_title}
